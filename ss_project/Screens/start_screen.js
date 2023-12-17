@@ -1,6 +1,6 @@
 //no idea what i'm doing but i hope this works 
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View, Image, Button, TouchableOpacity, ScrollView } from 'react-native';
+import { SafeAreaView, Text, View, Image, Button, TouchableOpacity, ScrollView } from 'react-native';
 import title, {boxes} from '../styles_for_Screens/styles_start_screen.js';
 import { LinearGradient } from 'expo-linear-gradient';
 import { LocalFilesList } from '../logic/display_song/local.js';
@@ -12,13 +12,13 @@ function Main() {
           <LinearGradient colors={['#153969', '#1f1f1f', '#1f1f1f']} style={title.linear}>
           
           <View style={title.rightContainer}>
-            <Image source={require('/workspaces/ss_project/ss_project/assets/favicon.png')} />
+            <Image source={require('/workspaces/ss_project/ss_project/assets/music.png')} />
             <Text style={title.text}>Projecto SS</Text>
           </View>
           
           <TouchableOpacity style={title.button}>
             <Image 
-              source={require('/workspaces/ss_project/ss_project/assets/favicon.png')}
+              source={require('/workspaces/ss_project/ss_project/assets/users.png')}
             />
          </TouchableOpacity>
          
@@ -43,7 +43,7 @@ function Main() {
             </View>
 
             <View style={boxes.section}>
-              <Text style={[title.text, boxes.text_1]}>From Your Local Lybrery</Text>
+              <Text style={[title.text, boxes.text_1]}>From Your Local Librery</Text>
               <LocalFilesList />
             </View>
           </ScrollView>

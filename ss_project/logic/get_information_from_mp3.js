@@ -1,27 +1,28 @@
 import { Image } from 'react-native';
-import getMp3Files from "./look_for_mp3";
-import defaultImage from '../assets/icon.png'; // Asegúrate de reemplazar esto con la ruta de tu imagen
+import defaultImage from '../assets/playlist1.png'; 
+import getMp3Files from './look_for_mp3'
 
 async function processFiles() {
-  const files = await getMp3Files();
+  const assets = await getMp3Files();
 
-  if (!Array.isArray(files)) {
+  if (!Array.isArray(assets)) {
     console.error('getMp3Files did not return an array');
     return [];
-  }
+  } 
 
-  return files.map(file => {
-    const minutes = Math.floor(file.duration / 60);
-    const seconds = Math.floor(file.duration % 60);
-
+  const processedFiles = assets.map(asset => {
+    const minutes = Math.floor(asset.duration / 60);
+    const seconds = Math.floor(asset.duration % 60);
+  
     return {
-      filename: file.filename,
+      filename: asset.filename,
       duration: `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`,
-      uri: file.uri,
-      image: Image.resolveAssetSource(defaultImage).uri,
+      uri: asset.uri,
+      image: Image.resolveAssetSource(defaultImage).uri, 
     };
-    
   });
+  
+  return processedFiles;
 }
 
 export default processFiles;

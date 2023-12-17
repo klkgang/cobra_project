@@ -5,6 +5,7 @@ const title =  StyleSheet.create({
   container: {
     flex: 0.10,
     flexDirection: 'row',
+  
   },
   linear: {
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
@@ -22,6 +23,9 @@ const title =  StyleSheet.create({
   },
   button: {
     marginLeft: 'auto',
+    
+
+  
   },
 
 });
@@ -38,7 +42,6 @@ const boxes = StyleSheet.create({
   section: {
     marginBottom: 250, // agrega espacio debajo de cada sección
   },
-  // el resto de tus estilos
 });
 
 
